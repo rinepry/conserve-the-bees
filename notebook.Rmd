@@ -1,0 +1,89 @@
+---
+title: "Conserve the Bees"
+author: F.J. Morales
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+Install packages
+```{r}
+install.packages("tidyverse") #cleaning, exploring, analyzing and visualizing data
+install.packages("rgbif") #communicating with GBIF API
+install.packages("DBI") #connecting to a database server
+install.packages("RPostgres") #communicating with PostgreSQL
+```
+
+Load libraries
+```{r}
+library(tidyverse)
+library(rgbif)
+library(DBI)
+library(RPostgres)
+```
+
+Store bee family names on a vector, get their **backbone** data and **taxonKey**
+```{r}
+beeFamilyName <- c('Apidae', 'Halictidae', 'Megachilidae', 'Andrenidae', 'Colletidae', 'Melittidae', 'Stenotritidae')
+beeFamilyBackbone <- name_backbone_checklist(beeFamilyName)
+beeFamilyKey <- beeFamilyBackbone$usageKey
+```
+
+Get download from **GBIF** query and import it into ***RStudio***
+```{r}
+gbifGet <- occ_download_get("0056337-231120084113126", path = ".", overwrite = FALSE)
+gbifImport <- occ_download_import(gbifGet)
+```
+
+Connect with **PostgreSQL** database
+```{r}
+postgres <- dbConnect(RPostgres::Postgres(),
+                dbname = 'beeDB', 
+                host = 'localhost',
+                port = 5432,
+                user = rstudioapi::askForPassword("Please enter user:"),
+                password = rstudioapi::askForPassword("Please enter password:"))
+```
+
+Store occurrence data on database
+```{r}
+dbWriteTable(pg, "occurrences", gbifImport)
+```
+
+Rename columns on database
+```{sql}
+ALTER TABLE occurrences
+  RENAME COLUMN "gbifID" to gbifID_,
+  RENAME COLUMN family to family_,
+  RENAME COLUMN genus to genus_,
+  RENAME COLUMN species to species_,
+  RENAME COLUMN "stateProvince" to province_,
+  RENAME COLUMN "occurrenceStatus" to status_,
+  RENAME COLUMN "individualCount" to count_,
+  RENAME COLUMN "decimalLatitude" to latitude_,
+  RENAME COLUMN "decimalLongitude" to longitude_,
+  RENAME COLUMN "eventDate" to date_
+```
+
+Query the dataset into a dataframe
+```{r}
+occurrencesDataframe <- dbGetQuery(postgres,"
+                                  SELECT
+                                    gbifid_,
+                                    family_,
+                                    genus_,
+                                    species_,
+                                    province_,
+                                    status_,
+                                    count_,
+                                    latitude_,
+                                    longitude_,
+                                    date_
+                                  FROM
+                                    occurrences
+                                  ")
+presentTibble <- occurrencesDataframe %>%
+  as_tibble() %>%
+  filter(status_ == 'PRESENT')
+```
+
