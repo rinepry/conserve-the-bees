@@ -1,0 +1,197 @@
+"","gbifid_","family_","genus_","species_","infraspecificepithet_","taxonrank_","scientificname_","verbatimscientificname_","province_","count_","latitude_","longitude_","date_"
+"1",1457649009,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Halictidae","Utah",NA,40.76083,-111.89028,1923-01-01
+"2",3096063036,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Panurginae","Utah",NA,40.746266,-111.861441,1923-01-01
+"3",3096062677,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Megachilidae","Utah",NA,40.746266,-111.861441,1923-01-01
+"4",890714160,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Undetermined","Iowa",NA,42.03472,-93.61972,1923-04-12
+"5",3801843018,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Halictidae Thomson, 1869","Texas",1,28.02028,-97.05417,1923-05-22
+"6",1457649866,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae","Utah",NA,39.5575,-111.65528,1923-08-10
+"7",4062292315,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Andrenidae sp. Fabricius 1775","Massachusetts",1,42.29664,-71.11182,1923-09-12
+"8",1437761325,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Andrenidae","Ohio",1,41.3931,-81.5367,1924-05-02
+"9",3801351210,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Megachilidae Latreille, 1802","Illinois",1,40.111,-88.207,1924-06-01
+"10",4174799331,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Megachilidae sp.","Florida",1,25.78601,-80.22765,1924-06-14
+"11",2563067173,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","R.I. Velez-Ruiz","South Dakota",NA,43.300815,-96.59282,1924-06-16
+"12",3801831378,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Andrenidae Latreille, 1802","California",1,34.22417,-118.23917,1924-06-23
+"13",1141875787,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Eucerini","Wisconsin",NA,43.0389,-87.9064,1925-05-16
+"14",2451370682,"Megachilidae","Protosmia","P. rubifloris","","FAMILY","Megachilidae","Prostomia rubiflorus","California",NA,33.541568,-117.782562,1926-06-04
+"15",890691540,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Undetermined","Oklahoma",NA,NA,NA,1926-06-23
+"16",657852437,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Panurgini","Kansas",NA,38.9717,-95.235,1927-06-20
+"17",2242544733,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","?","",NA,NA,NA,1928-05-02
+"18",659108601,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","else","California",NA,33.95,-117.39,1928-05-03
+"19",1932559150,"Melittidae","","Melittidae gen. sp.","","FAMILY","Melittidae","Melittidae","Utah",NA,39.198899,-111.57666,1928-06-13
+"20",2614356334,"Apidae","","Apidae gen. sp.","","FAMILY","Anthophoridae","Anthophoridae","California",NA,34.0637,-118.356825,1929-01-01
+"21",890713881,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Undetermined","Oklahoma",NA,36.748545,-98.216321,1930-06-16
+"22",890714154,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Undetermined","Oklahoma",NA,NA,NA,1930-07-01
+"23",1457687903,"Colletidae","","Colletidae gen. sp.","","FAMILY","Colletidae","Colletidae","Utah",NA,38.926538,-111.826898,1930-08-29
+"24",1417448882,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","undetermined","Oklahoma",NA,NA,NA,1931-03-23
+"25",2563069908,"Apidae","Melissodes","M. bimaculatus","","FAMILY","Apidae","Bimaculata","South Dakota",NA,44.311357,-96.798388,1931-10-01
+"26",1457649869,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Apinae","Utah",NA,41.709993,-112.015759,1932-05-02
+"27",2451361338,"Andrenidae","Andrena","A. linseyi","","FAMILY","Andrenidae","Adrena linsleyi","California",NA,NA,NA,1934-02-25
+"28",3988092345,"Colletidae","","Colletidae gen. sp.","","FAMILY","Colletidae","Colletidae sp. Lepeletier, 1841","California",1,33.91775,-116.63689,1934-10-27
+"29",658765675,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","else","Utah",NA,41.73,-111.83,1935-06-09
+"30",4122165349,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp.","Massachusetts",1,41.34317,-70.74475,1936-08-24
+"31",3128609203,"Halictidae","Augochloropsis","A. metallica","","FAMILY","Halictidae","Aug_opsis metallica","Indiana",NA,NA,NA,1937-06-22
+"32",3128617847,"Halictidae","Augochlorella","A. aurata","","FAMILY","Halictidae","Aug_ella aurata","Indiana",NA,NA,NA,1937-07-28
+"33",872933486,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Halictinae","Colorado",1,37.3333,-108.55,1938-07-26
+"34",872534788,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Brachynomadini","California",NA,33.78444,-117.3683,1939-03-12
+"35",2563069305,"Apidae","","Apidae gen. sp.","","FAMILY","Anthophoridae","Anthophorinae","South Dakota",NA,42.779442,-96.92921,1945-08-11
+"36",1142520980,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Anthidiini","California",1,33.740164,-116.69479,1946-07-13
+"37",3128600527,"Halictidae","Augochlora","A. pura","","FAMILY","Halictidae","Aug_ora pura","Indiana",NA,NA,NA,1947-07-26
+"38",1417448716,"Colletidae","","Colletidae gen. sp.","","FAMILY","Colletidae","undetermined","Oklahoma",NA,NA,NA,1948-06-18
+"39",1417448780,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","undetermined","Oklahoma",NA,NA,NA,1948-10-16
+"40",2556318799,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","x","Texas",NA,33.57778,-101.85472,1949-11-08
+"41",3128600656,"Halictidae","Augochloropsis","A. sumptuosa","","FAMILY","Halictidae","Aug_opsis sumptuosa","Indiana",NA,NA,NA,1950-06-23
+"42",1457650873,"Apidae","Xylocopa","Xylocopa sp.","","FAMILY","Apidae","xylocopa","Arizona",NA,33.650309,-110.849189,1950-06-25
+"43",3128608676,"Halictidae","Augochlorella","A. persimilis","","FAMILY","Halictidae","Aug_ella persimilis","Indiana",NA,NA,NA,1950-07-25
+"44",1300077066,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Halictidae unk.","New Mexico",NA,35.084491,-106.651137,1954-05-11
+"45",659099095,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","else","Florida",NA,28.78137,-82.6151,1954-10-24
+"46",2562948315,"Andrenidae","Andrena","Andrena sp.","","FAMILY","Andrenidae","Andrena scurra x arabis x capricornis","Utah",1,41.5,-112,1955-07-01
+"47",2451356813,"Andrenidae","Andrena","A. rozeni","","FAMILY","Andrenidae","Adrena rozeni","California",NA,33.129487,-116.431959,1958-02-18
+"48",2562954830,"Megachilidae","Megachile","Megachile sp.","","FAMILY","Megachilidae","Megachile undet.","Arizona",1,31.3532,-109.1426,1958-08-05
+"49",4168259585,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Anthophorini sp.","California",1,37.16493,-118.28955,1960-08-24
+"50",3750004351,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","v","Nevada",NA,36.66051,-115.994475,1960-10-12
+"51",1061031725,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","undetermined sp.","California",1,41.32496,-122.3194,1961-04-03
+"52",1061031775,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","undetermined sp.","California",1,41.32496,-122.3194,1961-04-07
+"53",1300074379,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae unk.","New Mexico",NA,35.084491,-106.651137,1961-05-01
+"54",1061030868,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","undetermined sp.","California",1,41.32496,-122.3194,1961-06-05
+"55",1437761098,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Epeolini","Oregon",1,44.45,-118.727,1962-06-18
+"56",1316160357,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Anthophorini","",NA,NA,NA,1963-01-01
+"57",1292024357,"Apidae","Bombus","Bombus sp.","","FAMILY","Apidae","bombus","Utah",NA,37.24861,-112.95583,1963-05-16
+"58",3801893353,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae Latreille, 1802","Nebraska",1,40.8,-96.67,1964-07-30
+"59",2432199889,"Apidae","","Apidae gen. sp.","","FAMILY","Anthophoridae","Unidentified Unidentified","Utah",1,40.444,-109.25289,1964-08-03
+"60",3801385222,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Osmiini","Wyoming",1,NA,NA,1968-07-01
+"61",3801410797,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Megachilinae","Texas",1,NA,NA,1969-10-12
+"62",3801973776,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Emphorini","Texas",1,NA,NA,1969-10-12
+"63",3801968817,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Augochlorini","Texas",1,NA,NA,1969-10-14
+"64",3385500302,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apide","Texas",1,32.000758,-101.783736,1971-06-05
+"65",2451373271,"Andrenidae","Andrena","A. bernardina","","FAMILY","Andrenidae","Adrena bernardina","California",NA,NA,NA,1972-03-14
+"66",2451372541,"Andrenidae","Andrena","A. blaisdelli","","FAMILY","Andrenidae","Adrena blaisdelli","California",NA,NA,NA,1972-04-05
+"67",2864430306,"Colletidae","","Colletidae gen. sp.","","FAMILY","Colletidae","Undetermined sp.","California",1,38.85123,-122.75627,1975-07-10
+"68",2864427305,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Undetermined sp.","California",1,38.42,-120.82,1975-07-18
+"69",2864432304,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Undetermined sp.","California",1,38.42,-120.82,1975-07-18
+"70",2979453523,"Apidae","","Apidae gen. sp.","","UNRANKED","BOLD:AAH9233","BOLD:AAH9233","Arizona",NA,NA,NA,1975-08-08
+"71",4042035492,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Andreninae","Arkansas",1,NA,NA,1976-04-22
+"72",1300077179,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Megachilidae unk.","New Mexico",NA,35.084491,-106.651137,1977-09-25
+"73",1300076975,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Andrenidae unk.","Nevada",NA,39.365578,-118.303864,1978-05-13
+"74",2432200611,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Unidentified Unidentified","Colorado",1,40.524129,-109.019817,1978-05-28
+"75",4439396811,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Andrenidae||''||","Georgia",1,33.960833,-83.378056,1978-05-30
+"76",2432202048,"Halictidae","Evylaeus","Evylaeus sp.","","FAMILY","Halictidae","Euylacus","",1,40.47361,-109.18167,1978-06-18
+"77",2432199872,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Unidentified Unidentified","Utah",1,40.425,-109.17528,1978-07-21
+"78",2898774040,"Halictidae","Lasioglossum","Lasioglossum sp.","","FAMILY","Halictidae","lasioglossum","California",1,33.998641,-119.802935,1979-05-19
+"79",1300076979,"Colletidae","","Colletidae gen. sp.","","FAMILY","Colletidae","Colletidae unk.","New Mexico",NA,35.198099,-106.433635,1979-08-29
+"80",1300074273,"Apidae","","Apidae gen. sp.","","FAMILY","Anthophoridae","Anthophorinae unk.","New Mexico",NA,34.905971,-106.686185,1979-09-01
+"81",3891568502,"Colletidae","","Colletidae gen. sp.","","FAMILY","Colletidae","Diphaglossinae","Texas",1,NA,NA,1980-07-25
+"82",4062294309,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Panurginae sp. Leach, 1815","New Mexico",1,31.50012,-108.87484,1980-08-19
+"83",3306281398,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","","Illinois",1,40.106111,-88.56,1981-09-23
+"84",3801873476,"Colletidae","","Colletidae gen. sp.","","FAMILY","Colletidae","Colletidae Le Peletier, 1841","California",1,32.67222,-116.23611,1982-05-01
+"85",131341607,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","","Colorado",NA,40.333,-105.5,1982-08-11
+"86",2451368386,"Megachilidae","Megachile","M. lobatifrons","","FAMILY","Megachilidae","Lobatifrons","California",NA,33.14446,-116.43796,1984-09-15
+"87",3801819949,"Melittidae","","Melittidae gen. sp.","","FAMILY","Melittidae","Melittidae Schenck, 1860","California",1,33.7431,-117.5222,1985-05-24
+"88",2994527851,"Colletidae","Hylaeus","H. modestus","","FAMILY","Colletidae","Modestus","New Mexico",NA,NA,NA,1986-08-01
+"89",2432199421,"Halictidae","Evylaeus","Evylaeus sp.","","FAMILY","Halictidae","Evylaseas","Colorado",1,39.049231,-108.685098,1988-07-29
+"90",2562683164,"Andrenidae","Andrena","Andrena sp.","","FAMILY","Andrenidae","andrena","California",NA,37.00038,-121.933681,1991-03-27
+"91",658280805,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Perditini","Kansas",NA,37.28111,-98.58,1992-06-12
+"92",2562696839,"Megachilidae","Coelioxys","Coelioxys sp.","","FAMILY","Megachilidae","coelioxys","California",NA,37.081908,-122.059276,1994-06-21
+"93",658289286,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Protandrenini","New Mexico",NA,NA,NA,1995-09-23
+"94",3704096159,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Bombinae","California",NA,32.715585,-117.161104,1997-05-23
+"95",3704096157,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Nomiinae","California",NA,32.715585,-117.161104,1997-05-23
+"96",1142509129,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Euglossini","Florida",1,26.44,-82.11183,1998-10-24
+"97",2432202169,"Apidae","Melissodes","Melissodes sp.","","FAMILY","Anthophoridae","Melisodes sp. 1","Colorado",1,37.17256,-108.514068,1999-06-28
+"98",2432202788,"Apidae","Melissodes","Melissodes sp.","","FAMILY","Anthophoridae","Melisodes sp. 3","Colorado",1,37.277066,-108.485268,1999-06-28
+"99",2432205487,"Apidae","Melissodes","Melissodes sp.","","FAMILY","Anthophoridae","Melisodes sp. 4","Colorado",1,37.20139,-108.54139,1999-08-06
+"100",2432203991,"Apidae","Melissodes","Melissodes sp.","","FAMILY","Anthophoridae","Melisodes sp. 2","Colorado",1,37.20139,-108.54139,1999-08-06
+"101",2432202665,"Apidae","Melissodes","Melissodes sp.","","FAMILY","Anthophoridae","Melisodes sp. 5","Colorado",1,37.257065,-108.409487,1999-08-06
+"102",657847203,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Melectini","Arizona",NA,33.661667,-114.008333,2000-03-23
+"103",1292026687,"Halictidae","Lasioglossum","L. lusoria","","FAMILY","Halictidae","Sphecodogastia lusoria","Utah",NA,38.104444,-109.7625,2000-04-23
+"104",1502538179,"Colletidae","","Colletidae gen. sp.","","FAMILY","Colletidae","Undetermined","Oklahoma",NA,NA,NA,2001-04-27
+"105",2432204663,"Halictidae","Halictus","H. confusus","","FAMILY","Halictidae","Aalictus confusus","Colorado",1,37.24972,-108.68333,2001-05-25
+"106",3801415064,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Fideliinae Cockerell","Illinois",1,42.11,-87.87,2001-08-22
+"107",3017527105,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Nomadinae Latreille, 1802","",NA,NA,NA,2001-10-18
+"108",2633468574,"Apidae","","Apidae gen. sp.","","UNRANKED","BOLD:AAZ4690","BOLD:AAZ4690","Oklahoma",NA,33.881,-96.8,2002-08-01
+"109",2432202247,"Colletidae","","Colletidae gen. sp.","","FAMILY","Colletidae","Unidentified Unidentified","Colorado",1,37.258847,-108.494565,2003-05-30
+"110",2432202719,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Unidentified Unidentified","Colorado",1,37.257065,-108.409487,2003-05-30
+"111",659098493,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","else","New Mexico",NA,34.35006,-106.88391,2004-08-10
+"112",4078856459,"Halictidae","Lasioglossum","Lasioglossum sp.","","FAMILY","Halictidae","Lasioglossum undet. parasitic","Connecticut",1,41.40805,-72.90166,2004-08-26
+"113",3017533338,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Eucerinae","",NA,NA,NA,2006-07-06
+"114",4078849383,"Apidae","Bombus","Bombus sp.","","FAMILY","Apidae","Bombus undetermined","Connecticut",1,42.02852,-73.15942,2008-05-30
+"115",1415583156,"Andrenidae","","Andrenidae gen. sp.","","UNRANKED","BOLD:AAG8029","BOLD:AAG8029","Oklahoma",NA,33.882,-96.802,2009-04-15
+"116",1415583665,"Melittidae","","Melittidae gen. sp.","","UNRANKED","BOLD:AAG8231","BOLD:AAG8231","Arizona",NA,32.6924,-114.498,2009-04-27
+"117",1414091807,"Apidae","","Apidae gen. sp.","","UNRANKED","BOLD:AAN7781","BOLD:AAN7781","Arizona",NA,34.942,-111.752,2010-04-28
+"118",4029665307,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Halictidae sp.","Indiana",1,41.6313,-87.089,2010-05-10
+"119",1416125020,"Apidae","","Apidae gen. sp.","","UNRANKED","BOLD:ABW4867","BOLD:ABW4867","California",NA,32.8352,-117.077,2011-03-29
+"120",1414090223,"Megachilidae","","Megachilidae gen. sp.","","UNRANKED","BOLD:ABX7596","BOLD:ABX7596","Arizona",NA,34.907,-111.728,2011-06-07
+"121",1414087941,"Andrenidae","","Andrenidae gen. sp.","","UNRANKED","BOLD:ACA6449","BOLD:ACA6449","Arizona",NA,34.907,-111.728,2011-06-08
+"122",1414089984,"Colletidae","","Colletidae gen. sp.","","UNRANKED","BOLD:ABX9165","BOLD:ABX9165","Arizona",NA,34.907,-111.728,2011-06-08
+"123",3348136760,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 230507","",NA,55.59,-132.89,2011-07-06
+"124",3351042068,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 230508","",NA,55.59,-132.89,2011-07-06
+"125",3350936170,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 230513","",NA,55.59,-132.89,2011-07-06
+"126",3348190742,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 230509","",NA,55.59,-132.89,2011-07-06
+"127",3348347967,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233234","",NA,55.59,-132.89,2011-07-09
+"128",3351018986,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233263","",NA,55.59,-132.89,2011-07-09
+"129",3348171730,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233236","",NA,55.59,-132.89,2011-07-09
+"130",3348258786,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233238","",NA,55.59,-132.89,2011-07-09
+"131",3351028697,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233260","",NA,55.59,-132.89,2011-07-09
+"132",3348303935,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233233","",NA,55.59,-132.89,2011-07-09
+"133",3348205793,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233261","",NA,55.59,-132.89,2011-07-09
+"134",3348153215,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233614","",NA,55.59,-132.89,2011-07-09
+"135",3348181656,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233262","",NA,55.59,-132.89,2011-07-09
+"136",3348281587,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233235","",NA,55.59,-132.89,2011-07-09
+"137",3348168998,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233613","",NA,55.59,-132.89,2011-07-09
+"138",3350985957,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233607","",NA,55.59,-132.89,2011-07-09
+"139",3351146802,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233264","",NA,55.59,-132.89,2011-07-09
+"140",3350907907,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233237","",NA,55.59,-132.89,2011-07-09
+"141",3348150806,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233586","",NA,55.59,-132.89,2011-07-09
+"142",3348171097,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233608","",NA,55.59,-132.89,2011-07-09
+"143",3348288854,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233611","",NA,55.59,-132.89,2011-07-09
+"144",3350995064,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233612","",NA,55.59,-132.89,2011-07-09
+"145",3348246658,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233239","",NA,55.59,-132.89,2011-07-09
+"146",3348262109,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233609","",NA,55.59,-132.89,2011-07-09
+"147",3348245157,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233610","",NA,55.59,-132.89,2011-07-09
+"148",3348153214,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233585","",NA,55.59,-132.89,2011-07-09
+"149",3348171098,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 231919","",NA,55,-133.01,2011-07-12
+"150",3348104955,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 231920","",NA,55,-133.01,2011-07-12
+"151",3350883070,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 231926","",NA,55,-133.01,2011-07-12
+"152",3350914848,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 231922","",NA,55,-133.01,2011-07-12
+"153",3348129197,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 231923","",NA,55,-133.01,2011-07-12
+"154",3350900040,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 231921","",NA,55,-133.01,2011-07-12
+"155",3348288853,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 231925","",NA,55,-133.01,2011-07-12
+"156",3351146801,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 231924","",NA,55,-133.01,2011-07-12
+"157",3348285078,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 233178","",NA,55,-133.014,2011-07-13
+"158",3348168997,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 232614","",NA,55,-133.02,2011-07-14
+"159",3348171729,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 231901","",NA,56.14,-132.34,2011-07-17
+"160",3348104954,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 231900","",NA,56.14,-132.34,2011-07-17
+"161",3351036910,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. UAM Ento 230736","",NA,56.13,-132.33,2011-07-21
+"162",865202362,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","(apidae) (indet)","California",NA,37.95207,-122.63303,2011-08-31
+"163",1060942610,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","undetermined sp.","California",1,37.65286,-121.92252,2011-11-21
+"164",1090137346,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae?","Colorado",1,39.729294,-107.978086,2012-01-01
+"165",1456775355,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae species","Maryland",NA,39.453,-76.2676,2013-05-19
+"166",3351053449,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. CC13B-02","",NA,44.46,-93.15,2013-09-19
+"167",3350964564,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. CC13B-03","",NA,44.46,-93.15,2013-09-19
+"168",4066955289,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","APIDAE","Pennsylvania",1,39.8457,-76.48,2014-06-03
+"169",2328369952,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Undetermined sp.","California",1,38.06,-122.8,2014-06-25
+"170",1133203499,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","undetermined","Oklahoma",NA,36.2045,-97.402,2014-09-08
+"171",4427100892,"Megachilidae","Heriades","Heriades sp.","","FAMILY","Megachilidae","heriades","Kentucky",NA,37.900278,-84.358611,2014-09-28
+"172",3028089661,"Apidae","Xylocopa","Xylocopa sp.","","FAMILY","Apidae","Xycolopa","North Carolina",1,35.0541,-83.1883,2015-05-09
+"173",3028087947,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Unidentified","North Carolina",1,35.085,-83.6176,2015-05-09
+"174",1563273939,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Unidentified unidentified_sp1_ab9tf14","North Carolina",1,35.085,-83.6176,2015-05-09
+"175",1449742679,"Andrenidae","Perdita","Perdita sp.","","FAMILY","Andrenidae","perdita","Utah",NA,40.2021,-112.8633,2015-07-16
+"176",3455170308,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Exomalopsini","New Mexico",NA,31.824618,-107.640899,2015-07-25
+"177",3351009464,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae sp. CC15A-12","",NA,44.46,-93.15,2015-09-16
+"178",1633767598,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","HALICTIDAE","",NA,42.007622,-88.065996,2016-08-19
+"179",1633789321,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","MEGACHILIDAE","",NA,34.547766,-119.791539,2017-05-05
+"180",4440629308,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Halictini","California",NA,37.783763,-122.472862,2017-07-10
+"181",1671711488,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Undetermined sp.","California",1,38.72291,-120.04948,2017-07-26
+"182",2459063419,"Halictidae","","Halictidae gen. sp.","","FAMILY","Halictidae","Halictidae species","Maryland",NA,39.089,-75.7688,2017-08-01
+"183",3020153659,"Halictidae","Halictus","H. confusus","","FAMILY","Halictidae","Helictus confuses","Alabama",NA,34.6645,-86.6822,2018-07-19
+"184",4038701552,"Andrenidae","","Andrenidae gen. sp.","","UNRANKED","BOLD:AEB2964","BOLD:AEB2964","Montana",NA,46.702,-114.034,2019-05-16
+"185",4039028554,"Andrenidae","","Andrenidae gen. sp.","","UNRANKED","BOLD:AEB8572","BOLD:AEB8572","Montana",NA,46.693,-114.045,2019-05-22
+"186",4039038776,"Andrenidae","","Andrenidae gen. sp.","","UNRANKED","BOLD:AEC1018","BOLD:AEC1018","Montana",NA,46.7,-114.008,2019-05-22
+"187",3064158387,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","","Oregon",NA,42.401757,-122.828387,2019-07-02
+"188",4038683621,"Halictidae","","Halictidae gen. sp.","","UNRANKED","BOLD:AEB2915","BOLD:AEB2915","Montana",NA,46.7,-114.008,2019-07-03
+"189",4038762271,"Halictidae","","Halictidae gen. sp.","","UNRANKED","BOLD:AEB7343","BOLD:AEB7343","Montana",NA,46.678,-114.039,2019-07-25
+"190",2882969400,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Megachilini","Missouri",NA,38.6158,-90.256225,2020-07-03
+"191",3908245312,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Anthidini","New Mexico",1,36.1875,-105.226111,2021-09-05
+"192",4454116536,"Megachilidae","Megachile","M. chilopsidis","","FAMILY","Megachilidae","Chilopis linearis","Arizona",NA,32.243,-111.168,2022-05-24
+"193",3906352910,"Apidae","","Apidae gen. sp.","","FAMILY","Apidae","Anthophorini indet.","United States - California (CA)",1,35.7811,-121.33,2022-08-12
+"194",4408354838,"Andrenidae","","Andrenidae gen. sp.","","FAMILY","Andrenidae","Calliopsini indet.","United States - California (CA)",1,36.631132,-118.121766,2023-05-15
+"195",4176078910,"Megachilidae","","Megachilidae gen. sp.","","FAMILY","Megachilidae","Apiformes indet.","",NA,64.878006,-155.562134,2023-06-03
+"196",4409606394,"Apidae","Apidae","Apidae sp.","","FAMILY","Apidae","Apidae indet.","United States - New York State (NY)",1,40.777824,-73.973328,2023-07-17
