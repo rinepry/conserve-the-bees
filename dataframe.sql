@@ -1,22 +1,3 @@
-SELECT
-    gbifid_,
-    family_,
-    genus_,
-    species_,
-    infraspecificepithet_,
-    taxonrank_,
-    scientificname_,
-    verbatimscientificname_,
-    province_,
-    count_,
-    latitude_,
-    longitude_,
-    date_
-FROM
-    occurrences
-WHERE
-    status_ = 'PRESENT' AND
-    date_ >= '1923-01-01 00:00:00' AND
-    date_ <= '2023-12-31 23:59:59'
-ORDER BY
-    date_ ASC
+version https://git-lfs.github.com/spec/v1
+oid sha256:bfa8d89e3590f6e0e6d1185ecf18a0fc554cdfbf3857d3130e5f0b98e53f60fb
+size 264

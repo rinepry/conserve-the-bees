@@ -1,14 +1,3 @@
-ALTER TABLE occurrences RENAME COLUMN "gbifID" TO gbifid_;
-ALTER TABLE occurrences RENAME COLUMN family TO family_;
-ALTER TABLE occurrences RENAME COLUMN genus TO genus_;
-ALTER TABLE occurrences RENAME COLUMN "species" TO species_;
-ALTER TABLE occurrences RENAME COLUMN "infraspecificEpithet" TO infraspecificepithet_;
-ALTER TABLE occurrences RENAME COLUMN "taxonRank" TO taxonrank_;
-ALTER TABLE occurrences RENAME COLUMN "scientificName" TO scientificname_;
-ALTER TABLE occurrences RENAME COLUMN "verbatimScientificName" TO verbatimscientificname_;
-ALTER TABLE occurrences RENAME COLUMN "stateProvince" TO province_;
-ALTER TABLE occurrences RENAME COLUMN "occurrenceStatus" TO status_;
-ALTER TABLE occurrences RENAME COLUMN "individualCount" TO count_;
-ALTER TABLE occurrences RENAME COLUMN "decimalLatitude" TO latitude_;
-ALTER TABLE occurrences RENAME COLUMN "decimalLongitude" TO longitude_;
-ALTER TABLE occurrences RENAME COLUMN "eventDate" TO date_;
+version https://git-lfs.github.com/spec/v1
+oid sha256:93aa7f772e1853acdbc57eba84d6d6b8a15d1470b80863902e3d5d9bd1396aa2
+size 528

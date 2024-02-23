@@ -1,6 +1,7 @@
 ---
 title: "Conserve the Bees"
 author: "F.J. Morales"
+doi: "GBIF.org (05 January 2024) GBIF Occurrence Download  https://doi.org/10.15468/dl.kktnnk"
 output:
   html_document:
     df_print: paged
@@ -9,11 +10,13 @@ editor_options:
 ---
 
 Install packages
-```{r install packages, eval=FALSE}
+```{r install packages, eval=FALSE, include=FALSE}
 install.packages("tidyverse") #cleaning, exploring, analyzing and visualizing data
 install.packages("rgbif") #communicating with GBIF API
 install.packages("DBI") #connecting to a database server
 install.packages("RPostgres") #communicating with PostgreSQL
+install.packages("maps") #converting coordinates to states
+install.packages("taxize") #parsing scientific names
 ```
 
 Load libraries
@@ -22,6 +25,8 @@ library(tidyverse)
 library(rgbif)
 library(DBI)
 library(RPostgres)
+library(maps)
+library(taxize)
 ```
 
 Store bee family names on a vector, get their **backbone** and **taxonKey** data
@@ -41,7 +46,7 @@ familyKey <- familyBackbone$usageKey
 ```
 
 Get download from **GBIF** query and import it into ***RStudio***
-```{r gbif}
+```{r gbif, eval=FALSE, include=FALSE}
 gbifGet <-
   occ_download_get("0056337-231120084113126",
                    path = ".",
@@ -50,7 +55,7 @@ gbifImport <- occ_download_import(gbifGet)
 ```
 
 Connect with **PostgreSQL** database
-```{r postgres}
+```{r postgres, eval=FALSE, include=FALSE}
 postgres <- dbConnect(
   RPostgres::Postgres(),
   dbname = 'beeDB',
@@ -62,21 +67,15 @@ postgres <- dbConnect(
 ```
 
 Store occurrences dataset on database
-```{r create table, eval=FALSE}
+```{r create table, eval=FALSE, include=FALSE}
 dbWriteTable(postgres, "occurrences", gbifImport)
 ```
 
 Rename columns
-```{sql rename columns, connection=postgres, eval=FALSE}
+```{sql rename columns, eval=FALSE, include=FALSE}
 ALTER TABLE occurrences RENAME COLUMN "gbifID" TO gbifid_;
 ALTER TABLE occurrences RENAME COLUMN family TO family_;
-ALTER TABLE occurrences RENAME COLUMN genus TO genus_;
-ALTER TABLE occurrences RENAME COLUMN "species" TO species_;
-ALTER TABLE occurrences RENAME COLUMN "infraspecificEpithet" TO infraspecificepithet_;
-ALTER TABLE occurrences RENAME COLUMN "taxonRank" TO taxonrank_;
 ALTER TABLE occurrences RENAME COLUMN "scientificName" TO scientificname_;
-ALTER TABLE occurrences RENAME COLUMN "verbatimScientificName" TO verbatimscientificname_;
-ALTER TABLE occurrences RENAME COLUMN "stateProvince" TO province_;
 ALTER TABLE occurrences RENAME COLUMN "occurrenceStatus" TO status_;
 ALTER TABLE occurrences RENAME COLUMN "individualCount" TO count_;
 ALTER TABLE occurrences RENAME COLUMN "decimalLatitude" TO latitude_;
@@ -85,19 +84,14 @@ ALTER TABLE occurrences RENAME COLUMN "eventDate" TO date_;
 ```
 
 Query the dataset into a **dataframe**
-```{r query}
+```{r query, eval=FALSE, include=FALSE}
+# connection=postgres
 occurrencesDataframe <- dbGetQuery(
   postgres,
   "SELECT
     gbifid_,
     family_,
-    genus_,
-    species_,
-    infraspecificepithet_,
-    taxonrank_,
     scientificname_,
-    verbatimscientificname_,
-    province_,
     count_,
     latitude_,
     longitude_,
@@ -116,203 +110,80 @@ occurrencesDataframe <- dbGetQuery(
 str(occurrencesDataframe)
 ```
 
-Make **species_** into a _binomial nomenclature_
-```{r species}
-speciesTibble <- occurrencesDataframe %>%
-  filter(species_ != '') %>%
-  arrange(date_) %>%
-  separate_wider_delim(species_, delim = " ", names_sep = "", too_few = "align_start")
+```{r read dataset}
+occurrencesDataframe <- read_csv("occurrencesDataframe.csv") %>%
+  mutate(date_ = as_date(date_))
 
-speciesTibble$species_1 <- substr(speciesTibble$species_1, start = 1, stop = 1)
-speciesTibble$species_ <- paste(speciesTibble$species_1, speciesTibble$species_2, sep = ". ")
-
-speciesTibble <- speciesTibble %>%
-  relocate(species_, .after = genus_)
-
-speciesTibble[5:6] <- list(NULL)
-View(speciesTibble)
+occurrencesDataframe$...1 <- NULL
+str(occurrencesDataframe)
 ```
 
-Add _sp._ to _genera_ without _epithet_
-```{r genus}
-genusTibble <- occurrencesDataframe %>%
-  filter(genus_ != '' & species_ == '') %>%
-  arrange(date_)
-
-genusTibble$species_ <- paste0(genusTibble$genus_, sep = " sp.")
-View(genusTibble)
-```
-
-```{r genus unique}
-unique <- tibble(genusTibble[!duplicated(genusTibble[,c('genus_','verbatimscientificname_')]),])
-View(unique)
-write.csv(unique, "genus.csv")
-
-#in LibreOffice Calc
-#delete all columns but family_, genus_ and verbatimscientificname_
-#split verbatimscientificname_ text into columns and add filters
-#filter verbatimscientificname_ for anything not a scientific name and delete those rows
-#in cell K2, add the formula '=B2=PROPER(C2)', fill throughout column and add filter
-#filter column D for 'empty' and column K for 'TRUE', delete those rows, unfilter and delete column K
-#sort sheet by family_ ascending, genus_ ascending, ver;batimscientificname_ ascending and column D ascending
-#duplicate sheet
-#with GBIF as reference, filter by family_ and look up names. if they match with a genus and/or epithet, enter genus and species into columns I and J respectively. if they don't, delete the row
-#write a script to overwrite the entries in familyTibble with the correct genus and species
-```
-
-Add _sp._ to _family_ without _epithet_ or _genera_
-```{r family}
-familyTibble <- occurrencesDataframe %>%
-  filter(family_ != '' & genus_ == '' & species_ == '') %>%
-  arrange(date_)
-
-familyTibble$genus_ <- paste0(familyTibble$family_, sep = " gen.")
-familyTibble$species_ <- paste0(familyTibble$family_, sep = " gen. sp.")
-
-View(familyTibble)
-```
-
-```{r family unique}
-unique <- tibble(familyTibble[!duplicated(familyTibble[,c('family_','verbatimscientificname_')]),])
-View(unique)
-write.csv(unique, "family.csv")
-
-#in LibreOffice Calc
-#delete all columns but family_ and verbatimscientificname_
-#split verbatimscientificname_ text into columns and add filters
-#filter verbatimscientificname_ for anything not a scientific name and delete those rows
-#in cell I2, add the formula '=A2=PROPER(B2)', fill throughout column and add filter
-#filter column I for 'TRUE', filter family_ for all but 'Apidae', delete those rows, unfilter and delete column I
-#sort sheet by family_ ascending, verbatimscientificname_ ascending and column C ascending
-#duplicate sheet
-#with GBIF as reference, filter by family_ and look up names. if they match with a genus and/or epithet, enter genus and species into columns I and J respectively. if they don't, delete the row
-#write a script to overwrite the entries in familyTibble with the correct genus and species
-
-familyTibble$genus_[grepl('(?i)apid', familyTibble$verbatimscientificname_)] <- "Apidae"
-familyTibble$species_[grepl('(?i)apid', familyTibble$verbatimscientificname_)] <- "Apidae sp."
-
-familyTibble$genus_[grepl('(?i)bombus', familyTibble$verbatimscientificname_)] <- "Bombus"
-familyTibble$species_[grepl('(?i)bombus', familyTibble$verbatimscientificname_)] <- "Bombus sp."
-
-familyTibble$genus_[grepl('Euylacus|Evylaseas', familyTibble$verbatimscientificname_)] <- "Evylaeus"
-familyTibble$species_[grepl('Euylacus|Evylaseas', familyTibble$verbatimscientificname_)] <- "Evylaeus sp."
-
-familyTibble$genus_[grepl('Aalictus|Helictus', familyTibble$verbatimscientificname_)] <- "Halictus"
-familyTibble$species_[grepl('Aalictus|Helictus', familyTibble$verbatimscientificname_)] <- "H. confusus"
-
-familyTibble$genus_[grepl('(?i)lasioglossum', familyTibble$verbatimscientificname_)] <- "Lasioglossum"
-familyTibble$species_[grepl('(?i)lasioglossum', familyTibble$verbatimscientificname_)] <- "Lasioglossum sp."
-
-familyTibble$genus_[grepl('Melisodes', familyTibble$verbatimscientificname_)] <- "Melissodes"
-familyTibble$species_[grepl('Melisodes', familyTibble$verbatimscientificname_)] <- "Melissodes sp."
-
-familyTibble$genus_[grepl('Xycolopa|xylocopa', familyTibble$verbatimscientificname_)] <- "Xylocopa"
-familyTibble$species_[grepl('Xycolopa|xylocopa', familyTibble$verbatimscientificname_)] <- "Xylocopa sp."
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Aug_ella aurata"] <- "Augochlorella"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Aug_ella aurata"] <- "A. aurata"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Adrena bernardina"] <- "Andrena"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Adrena bernardina"] <- "A. bernardina"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Adrena blaisdelli"] <- "Andrena"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Adrena blaisdelli"] <- "A. blaisdelli"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Adrena linsleyi"] <- "Andrena"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Adrena linsleyi"] <- "A. linseyi"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Aug_opsis metallica"] <- "Augochloropsis"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Aug_opsis metallica"] <- "A. metallica"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Aug_ella persimilis"] <- "Augochlorella"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Aug_ella persimilis"] <- "A. persimilis"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Aug_ora pura"] <- "Augochlora"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Aug_ora pura"] <- "A. pura"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Adrena rozeni"] <- "Andrena"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Adrena rozeni"] <- "A. rozeni"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Aug_opsis sumptuosa"] <- "Augochloropsis"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Aug_opsis sumptuosa"] <- "A. sumptuosa"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "andrena"] <- "Andrena"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "andrena"] <- "Andrena sp."
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "coelioxys"] <- "Coelioxys"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "coelioxys"] <- "Coelioxys sp."
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Modestus"] <- "Hylaeus"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Modestus"] <- "H. modestus"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "heriades"] <- "Heriades"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "heriades"] <- "Heriades sp."
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Lobatifrons"] <- "Megachile"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Lobatifrons"] <- "M. lobatifrons"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Megachile undet."] <- "Megachile"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Megachile undet."] <- "Megachile sp."
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "Prostomia rubiflorus"] <- "Protosmia"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "Prostomia rubiflorus"] <- "P. rubifloris"
-
-familyTibble$genus_[familyTibble$verbatimscientificname_ == "perdita"] <- "Perdita"
-familyTibble$species_[familyTibble$verbatimscientificname_ == "perdita"] <- "Perdita sp."
-
-View(familyTibble)
-```
-
-```{r}
-occurrencesDataframe$province_[occurrencesDataframe$province_ == ""] <- "Unkown"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "District Of Columbia"] <- "District of Columbia"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Usa"] <- "Unkown"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "New Mexico, Sierra Blanca"] <- "New Mexico"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Or"] <- "Unkown"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "XXArizona"] <- "Arizona"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Cochise"] <- "Arizona"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "[Not Stated]"] <- "Unkown"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Dona Ana County"] <- "New Mexico"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Ma??"] <- "Unkown"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "North Carolina/Tennessee"] <- "Appalachias"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Ca"] <- "California"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Rio Arriba County"] <- "New Mexico"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Las Animas County"] <- "Colorado"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Montezuma County"] <- "Colorado"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Me."] <- "Unkown"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Modoc"] <- "Modoc Nation"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "N j"] <- "New Jersey"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Hidalgo"] <- "Texas"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Mono County"] <- "California"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Louisiana, Avery Island"] <- "Louisiana"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Plumas"] <- "California"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "James Island"] <- "South Carolina"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Alaska, Dillingham"] <- "Alaska"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "michigan"] <- "Michigan"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "North Holland"] <- "Unkown"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Michigan, Mackinac Island"] <- "Michigan"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "[California]"] <- "California"
-occurrencesDataframe$province_[occurrencesDataframe$province_ == "Mont."] <- "Unkown"
-```
-
-_Mutate_ **date_** field to **date** type and **count_** field to replace nulls with 1
-```{r mutate}
-occurrencesTibble <- occurrencesTibble %>%
+_Mutate_ **count_** field to replace nulls with 1 and _floor_ **date_** to month
+```{r count and date}
+occurrencesDataframe <- occurrencesDataframe %>%
   mutate(count_ = replace_na(count_, 1),)
 
-occurrencesTibble$date_ <- occurrencesTibble$date_ %>%
+occurrencesDataframe$date_ <- occurrencesDataframe$date_ %>%
   floor_date(unit = "month")
-
-summaryDate <- tibble(
-  family_ = occurrencesTibble$family_,
-  count_ = occurrencesTibble$count_,
-  date_ = occurrencesTibble$date_
-)
-
-summaryDate <- summaryDate %>%
-  group_by(year = year(date_),
-           family = family_) %>%
-  summarise(sum = sum(count_))
-
-head(summaryDate)
 ```
+
+Get **state_** and **county_** from coordinates (**latitude_** and **longitude_**)
+```{r coordinates}
+occurrencesDataframe <- occurrencesDataframe[!is.na(occurrencesDataframe$latitude_ | occurrencesDataframe$longitude_),]
+occurrencesDataframe$locality_ <- map.where(database  = "county", occurrencesDataframe$longitude_, occurrencesDataframe$latitude_)
+occurrencesDataframe <- occurrencesDataframe %>%
+  relocate(locality_, .after = count_) %>%
+  separate_wider_delim(locality_, delim = ",", names = c("state_", "county_"))
+
+occurrencesDataframe$state_ <- str_to_title(occurrencesDataframe$state_)
+occurrencesDataframe$county_ <- str_to_title(occurrencesDataframe$county_)
+```
+
+Establish occurrences location
+```{r location}
+#location <- str_to_title(readline(prompt = "Please enter location: "))
+location <- c('North Carolina')
+occurrencesTibble <- occurrencesDataframe %>%
+  filter(occurrencesDataframe$state_ == location)
+
+tibble(occurrencesTibble)
+```
+
+Get **genus_** and **species_** (genus and epithet) from **scientificname_**
+```{r scientific names}
+names <- tibble(name_parse(scientificname = occurrencesTibble$scientificname_, curlopts = list()))
+names <- tibble(species_ = names$canonicalname,
+                genus_ = names$genusorabove,
+                epithet_ = names$specificepithet)
+
+names <- replace_na(names, list(genus_ = "Gen.", epithet_ = "sp."))
+
+occurrencesTibble$genus_ <- names$genus_
+occurrencesTibble$species_ <- names$epithet_
+
+occurrencesTibble$species_[occurrencesTibble$species_ != "sp."] <- 
+  paste(str_sub(occurrencesTibble$genus_[occurrencesTibble$species_ != "sp."], start = 1, end = 1),
+        occurrencesTibble$species_[occurrencesTibble$species_ != "sp."],
+        sep = ". ")
+
+occurrencesTibble$species_[occurrencesTibble$species_ == "sp."] <- 
+  paste(occurrencesTibble$genus_[occurrencesTibble$species_ == "sp."],
+        occurrencesTibble$species_[occurrencesTibble$species_ == "sp."], sep = " ")
+
+occurrencesTibble <- occurrencesTibble %>%
+  relocate(genus_, .after = family_)
+
+occurrencesTibble <- occurrencesTibble %>%
+  relocate(species_, .after = genus_)
+```
+
+```{r summarize time}
+summaryTime <- aggregate(occurrencesTibble$count_, list(occurrencesTibble$date_), FUN = sum) %>%
+  rename(date_ = Group.1, sum_ = x)
+```
+
+```{r summarize space}
+summarySpace <- aggregate(occurrencesTibble$count_, list(occurrencesTibble$county_), FUN = sum) %>%
+  rename(county_ = Group.1, sum_ = x)
+```
+
